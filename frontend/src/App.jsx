@@ -5,9 +5,12 @@ import Dashboard from "./pages/auth/dashboard"
 import Settings from "./pages/settings"
 import AccountPage from "./pages/account-page"
 import TransactionPage from "./pages/transaction-page"
+import useStore from "./store"
+
 
 const RootLayout = () =>{
-  const user = null 
+  const {user} = useStore((state)=>state)
+  console.log(user)
   return !user ? (<Navigate to="sign-in" replace={true}/> )
    : (
     <>
